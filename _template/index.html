@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!--
+    Per-app landing template.  Copy this folder to /<slug>/ and replace every {{placeholder}}.
+    Field meanings and CTA render rules: docs/DESIGN-BRIEF.md section 5.
+    Values come from the app's entry in apps/index.json; do not write copy that is not true today.
+    Sentence gaps in visible copy are U+00A0 plus a space, never the literal entity text.
+  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{Name}} — {{Title Case Tagline}} · Simple With Us</title>
+  <meta name="description" content="{{tagline}}">
+  <link rel="canonical" href="https://simplewithus.com/{{slug}}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{Name}} · Simple With Us">
+  <meta property="og:description" content="{{tagline}}">
+  <meta property="og:url" content="https://simplewithus.com/{{slug}}/">
+  <meta property="og:image" content="https://simplewithus.com{{icon}}">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to Content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/"><span class="caret" aria-hidden="true">&gt;</span>Simple With Us</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="/#apps">All Apps</a>
+      <a href="support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="app-hero">
+    <!-- Replace src with the app icon path from apps/index.json ({{icon}}). -->
+    <img class="app-icon" src="/assets/favicon.svg" alt="{{Name}} app icon" width="96" height="96">
+    <div>
+      <h1>{{Name}}</h1>
+      <p>{{tagline}}</p>
+      <ul class="pills" aria-label="Platforms">
+        <li class="pill">{{Platform}}</li>
+      </ul>
+      <span class="status status-{{status}}">{{statusText}}</span>
+    </div>
+  </section>
+
+  <!--
+    CTA rules (render only what is non-null in apps/index.json):
+      links.appStore   -> "Download on the App Store" with ?pt={{providerToken}}&ct=swu-{{slug}}-hero
+      links.testFlight -> "Join the Beta" (public invite https://testflight.apple.com/join/<code> only)
+      links.brew       -> code block with a Copy button
+      links.website    -> "Visit {{Name}}"
+      links.github     -> "View Source"
+      nothing to install -> keep the status line; a not-yet-public button uses aria-disabled="true" and no href
+  -->
+  <div class="btn-row">
+    <a class="btn btn-primary" href="{{links.appStore}}?pt={{providerToken}}&amp;ct=swu-{{slug}}-hero" rel="noopener">Download on the App Store</a>
+    <a class="btn" href="{{links.testFlight}}" rel="noopener">Join the Beta</a>
+    <a class="btn" href="{{links.website}}" rel="noopener">Visit {{Name}}</a>
+    <a class="btn" href="{{links.github}}" rel="noopener">View Source</a>
+    <a class="btn" role="link" aria-disabled="true">Mac Download Soon</a>
+  </div>
+
+  <div class="prose">
+    <h2>What It Does</h2>
+    <p>{{Two or three sentences from the repo README's first paragraph.  Sentence case, and no claim the app cannot back up.}}</p>
+
+    <h2 id="install">Install</h2>
+    <div class="code">
+      <button class="copy" type="button" hidden>Copy</button>
+      <pre><code>{{brew install --cask jaywedgeworth22/tap/slug, or git clone https://github.com/jaywedgeworth22/Repo.git}}</code></pre>
+    </div>
+    <p class="sr-only" aria-live="polite" id="copy-status"></p>
+
+    <details>
+      <summary>Build Details</summary>
+      <p>Version {{version}} · bundle id <code>{{bundleId}}</code> · SHA-256 <code>{{sha256 of the download}}</code></p>
+    </details>
+
+    <h2>Screenshots</h2>
+    <p>{{One to three real screenshots, captured on a light Mac, WebP or AVIF, each under 150 KB, with alt text that describes the screen.}}</p>
+
+    <h2 id="mac">{{Optional second platform section, for example the Mac version}}</h2>
+    <p>{{Keep this anchor if an App Store Connect record or an old /slug-mac/ page points at #mac.}}</p>
+
+    <h2>Privacy and Support</h2>
+    <p>{{What leaves the device, in one or two plain sentences.}}  Questions go to <a href="mailto:feedback@simplewithus.com">feedback@simplewithus.com</a>, and <a href="support.html">the support page</a> covers common fixes.</p>
+  </div>
+
+  <!-- Attribution block, required by AGENTS.md for every app directory. -->
+  <p class="attribution">{{Name}} is developed in the open at <a href="{{links.github}}" rel="noopener">github.com/jaywedgeworth22/{{Repo}}</a> under the Apache License 2.0.  This page lives in <a href="https://github.com/jaywedgeworth22/Simple-With-Us" rel="noopener">jaywedgeworth22/Simple-With-Us</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><a href="/">Simple With Us</a></span>
+    <nav aria-label="Footer">
+      <a href="support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+    <p class="legal">© 2026 Simple With Us.  Apple, App Store, TestFlight, iOS, and macOS are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var status = document.getElementById("copy-status");
+  document.querySelectorAll(".code").forEach(function (block) {
+    var btn = block.querySelector(".copy");
+    var code = block.querySelector("code");
+    if (!btn || !code || !navigator.clipboard) return;
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        btn.textContent = "Copied";
+        if (status) status.textContent = "Copied to clipboard";
+        setTimeout(function () { btn.textContent = "Copy"; if (status) status.textContent = ""; }, 1500);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
