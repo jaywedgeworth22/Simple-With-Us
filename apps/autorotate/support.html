@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autorotate.Codes Support -- Simple With Us</title>
+  <meta name="description" content="Per-app rules, Bluetooth triggers, and known-issue reference for Autorotate.Codes on iOS." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">Autorotate.Codes</span>
+  <h1>Support</h1>
+  <p class="lede">Per-app rules, Bluetooth triggers, and known-issue reference. If the four checks below don't fix it, send the output to <code>feedback@simplewithus.com</code> and we'll come back the same day.</p>
+
+  <h2>The four checks that catch 90% of "rule did nothing" reports</h2>
+  <ol>
+    <li><strong>Rule toggle is on.</strong> Rules screen shows the toggle on the right. If it's off, the rule is defined but never fires. Toggle on.</li>
+    <li><strong>App in foreground when you test.</strong> The rule fires on app-foreground events. If the app is already open, leave it and reopen. Foreground events drive the rule, not background motion.</li>
+    <li><strong>Bluetooth device actually connected.</strong> For device-triggered rules, confirm the device shows as Connected in iOS Settings &gt; Bluetooth, not just Paired. Many car mounts stay Paired but never connect until the engine starts.</li>
+    <li><strong>App overrides orientation.</strong> Some apps (camera, most video players) take over orientation lock. The rule fires (Diagnostics shows it); the app ignores it. That's the app, not us.</li>
+  </ol>
+
+  <h2>Crash log or "Application keeps closing"</h2>
+  <p>If Autorotate.Codes crashes immediately on launch or after a specific screen, pull a Console log from the Mac (Console.app &gt; iPhone &gt; Autorotate.Codes) and send the last ~200 lines to <code>feedback@simplewithus.com</code>. If you can repro, note the exact steps and the iOS version (Settings &gt; General &gt; About).</p>
+
+  <h2>Rule fired but the screen did not rotate</h2>
+  <p>The Diagnostics screen shows recent firings. If a rule fired and the screen did not change, the targeted app almost certainly locks orientation itself. That's an app-level constraint we cannot override without using private APIs. Email the app's developer; the most you can do is open the app, leave it, and reopen.</p>
+
+  <h2>Sending logs to support</h2>
+  <p>The app's Settings screen has a "Send Logs" action (under Diagnostics). It bundles the last few minutes into a single zip, scrubbed of your rule names, and opens a prefilled email to <code>feedback@simplewithus.com</code>. Attach the zip; we respond usually within a business day.</p>
+
+  <h2>Contact</h2>
+  <div class="callout">
+    <p><strong>feedback@simplewithus.com</strong> -- open a thread, don't worry about templates. Note your iOS version and the app you were testing the rule against.</p>
+  </div>
+
+  <p style="margin-top: 32px;"><a class="btn btn-secondary" href="/">&larr; Back to Simple With Us</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DealDex Support -- Simple With Us</title>
+  <meta name="description" content="Chain selection, wallet handoff, and known-issue reference for DealDex on iOS." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">DealDex</span>
+  <h1>Support</h1>
+  <p class="lede">Chain selection, wallet handoff, and known-issue reference. If the four checks below don't fix it, send the output to <code>feedback@simplewithus.com</code> and we'll come back the same day.</p>
+
+  <h2>The four checks that catch 90% of routing issues</h2>
+  <ol>
+    <li><strong>Wallet app installed and unlocked.</strong> DealDex hands the swap route to your wallet via the universal-link contract. If the wallet is uninstalled or locked, the handoff fails. Unlock and retry.</li>
+    <li><strong>Correct chain selected in the chain picker.</strong> A token on Solana and a token with the same symbol on Base are not the same contract. Confirm the chain before you route.</li>
+    <li><strong>iOS default-app picker.</strong> If you have multiple wallet apps, iOS may ask which one to open. If you picked the wrong wallet and tapped "Always", long-press the route tile and reset the default.</li>
+    <li><strong>Feed freshness.</strong> Onchain data can lag a few seconds. Pull-to-refresh on the feed; listings that landed since the last poll show up immediately.</li>
+  </ol>
+
+  <h2>Crash log or "Application keeps closing"</h2>
+  <p>If DealDex crashes immediately on launch or after a specific screen, pull a Console log from the Mac (Console.app &gt; iPhone &gt; DealDex) and send the last ~200 lines to <code>feedback@simplewithus.com</code>. If you can repro, note the chain, the token, and your iOS version.</p>
+
+  <h2>Swap failed after handoff</h2>
+  <p>Once the swap is in your wallet, DealDex is out of the loop. Revert, slippage, gas estimation -- those are wallet-side decisions. If the wallet broadcast the transaction and it reverted, the chain receipt is the source of truth. If the wallet refused to broadcast, that's a wallet-side issue (or a route issue -- email us the route token).</p>
+
+  <h2>Sending logs to support</h2>
+  <p>The app's Settings screen has a "Send Logs" action (under Diagnostics). It bundles the last few minutes into a single zip, scrubbed of your wallet address, and opens a prefilled email to <code>feedback@simplewithus.com</code>. Attach the zip; we respond usually within a business day.</p>
+
+  <h2>Contact</h2>
+  <div class="callout">
+    <p><strong>feedback@simplewithus.com</strong> -- open a thread, don't worry about templates. Note the chain, the pair, and the wallet app you use.</p>
+  </div>
+
+  <p style="margin-top: 32px;"><a class="btn btn-secondary" href="/">&larr; Back to Simple With Us</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

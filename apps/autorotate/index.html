@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autorotate.Codes -- Lock or rotate orientation per-app, per-URL, per-device</title>
+  <meta name="description" content="Autorotate.Codes is the iOS orientation rule engine. Lock or rotate by app, by URL, by Bluetooth device. Includes a native macOS counterpart." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">iOS orientation rules</span>
+  <h1>Lock or rotate orientation exactly when you need it.</h1>
+  <p class="lede">Autorotate.Codes is the iOS app for orientation that respects context. Lock Instagram to portrait. Force YouTube landscape when a specific Bluetooth speaker connects. Pin a reading app to portrait when you prop the phone in a desk cradle. The rules you want, when you want them, without the fight with iOS defaults.</p>
+
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://autorotate.codes">Open Autorotate.Codes</a>
+    <a class="btn btn-secondary" href="support.html">Support</a>
+    <a class="btn btn-secondary" href="/privacy.html">Privacy</a>
+  </div>
+
+  <h2>What's inside</h2>
+  <ul>
+    <li><strong>Per-app rules.</strong> Pick an app, pick a locked or forced orientation. The rule takes effect the next time the app comes to the foreground.</li>
+    <li><strong>Per-URL rules.</strong> Inside supported browsers, match on URL pattern. Some sites assume landscape; some force their own layout regardless.</li>
+    <li><strong>Bluetooth triggers.</strong> Pair a device -- a car mount, a gym cradle, a desk dock -- and the rule fires when it connects.</li>
+    <li><strong>Schedule rules.</strong> Time-of-day rules for the times your context shifts. Work hours portrait, evening unlocked.</li>
+    <li><strong>macOS counterpart.</strong> The Mac sibling handles display-rotation rules. Rules can roam between devices with iCloud Drive.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>Autorotate.Codes hooks into iOS orientation events through the standard app-foreground lifecycle. The app applies your rule when an app comes forward, when a URL pattern matches, when a paired Bluetooth device connects, or when the schedule fires. There is no jailbreak, no private API; the app respects the limits iOS exposes.</p>
+
+  <ol>
+    <li>Open the Rules screen and add your first rule. Pick the trigger (app, URL, device, schedule) and the orientation.</li>
+    <li>Test by opening the targeted app or visiting the targeted URL.</li>
+    <li>Tune. The Diagnostics screen shows recent rule firings and skipped events.</li>
+  </ol>
+
+  <h2>What it doesn't do</h2>
+  <ul>
+    <li><strong>Force apps that ignore orientation.</strong> Some apps (most video players, most camera apps) take over orientation lock at the app level. The rule fires; the app ignores it. We surface the rule fire in Diagnostics; the override is the app's, not ours.</li>
+    <li><strong>iPad split-view per-window.</strong> iPadOS exposes per-window orientation; that comes in a later release.</li>
+    <li><strong>System-wide rotation without a rule.</strong> Every action requires an explicit rule. The app never changes orientation behind your back.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>Autorotate.Codes only needs to manage your orientation rules. No telemetry, no account, no analytics. Rules sync through iCloud Drive if you opt in; otherwise they stay on-device. Crash reports are opt-in. Full notice at <a href="/privacy.html">/privacy</a>.</p>
+
+  <h2>Need help?</h2>
+  <p>If a rule fires but the app ignores it, that's almost always the app, not the rule. <a href="support.html">The support page</a> covers the four checks that catch 90% of "rule did nothing" reports; if those don't help, write to <code>feedback@simplewithus.com</code> with your iOS version and the app you were testing.</p>
+
+  <p><a class="btn btn-primary" href="https://autorotate.codes">Get Autorotate.Codes</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="support.html">Support</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usage Local Monitor -- On-device AI spend tracker, no cloud, no account</title>
+  <meta name="description" content="Usage Local Monitor tracks AI usage entirely on your iPhone. No account, no server, no cloud sync. Caps, daily spend, and model availability, all from your phone." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">iOS on-device monitor</span>
+  <h1>Track AI spend without sending a byte to anyone.</h1>
+  <p class="lede">Usage Local Monitor is the no-account counterpart to its server-backed sibling. You enter your plan and your daily spend manually; the app rolls it up locally and warns you before you hit the cap. There is no server, no cloud sync, no account. Your numbers stay on your phone.</p>
+
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://testflight.apple.com/">Join the TestFlight Beta</a>
+    <a class="btn btn-secondary" href="support.html">Support</a>
+    <a class="btn btn-secondary" href="/privacy.html">Privacy</a>
+  </div>
+
+  <h2>What's inside</h2>
+  <ul>
+    <li><strong>Caps and daily spend.</strong> Set a per-provider cap; log your daily spend; the app warns when you're approaching the line.</li>
+    <li><strong>Model availability.</strong> Per-provider, per-model -- a quick lookup of which models are accessible on your plan, with quota brackets where the provider publishes them.</li>
+    <li><strong>Manual entry, no scraping.</strong> The app reads no usage endpoints; you stay in control of what enters it.</li>
+    <li><strong>Local notifications.</strong> Cap-warning notifications fire from your device, not a server. No background telemetry, no relay.</li>
+    <li><strong>CSV export.</strong> Per-provider, per-date-range. Export once, archive forever.</li>
+  </ul>
+
+  <h2>How it works</h2>
+  <p>Usage Local Monitor is the simplest thing that works: a local store for plan, cap, and the day's spend. There is no provider integration, no API key, no account. The app never talks to a server. The trade-off is that you maintain the entry -- but the upside is that nothing leaves the device.</p>
+
+  <ol>
+    <li>Add your plan and per-provider cap in the Providers screen.</li>
+    <li>Log your daily spend; the app rolls it up locally.</li>
+    <li>Set a cap-warning threshold and let the local notification fire when you're close.</li>
+  </ol>
+
+  <h2>What it doesn't do</h2>
+  <ul>
+    <li><strong>Provider integration.</strong> The app does not read any provider's usage endpoint. You enter your spend manually.</li>
+    <li><strong>Cross-device sync.</strong> No iCloud, no server. If you wipe the device, your numbers go with it (CSV export first).</li>
+    <li><strong>Auto-renewal tracking.</strong> The app does not manage subscriptions or trial expiry.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>Usage Local Monitor runs entirely on-device. No account, no server, no cloud sync, no analytics. The app does not transmit your spend to anyone. Crash reports are opt-in and scrubbed of identifiers. Full notice at <a href="/privacy.html">/privacy</a>.</p>
+
+  <h2>Need help?</h2>
+  <p>The most common hiccup is forgetting the manual entry after a long session. <a href="support.html">The support page</a> covers the four checks that catch 90% of "the cap warning never fires" reports; if those don't help, write to <code>feedback@simplewithus.com</code> with your iOS version.</p>
+
+  <p><a class="btn btn-primary" href="https://testflight.apple.com/">Get Usage Local Monitor</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="support.html">Support</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

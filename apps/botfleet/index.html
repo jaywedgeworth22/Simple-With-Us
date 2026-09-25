@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BotFleet -- Run your bot fleet from one place</title>
+  <meta name="description" content="BotFleet is the iOS orchestration app for automation fleets. Schedule runs, monitor health, and inspect logs from one place, with a native macOS menu-bar companion." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">iOS bot orchestration</span>
+  <h1>Run your bot fleet from one place.</h1>
+  <p class="lede">Bot orchestration platform -- schedule, monitor, and inspect automation fleets from one place. Native iOS app and a macOS menu-bar companion.</p>
+
+  <div class="btn-row">
+    <a class="btn btn-primary" href="https://botfleet.app">Visit botfleet.app</a>
+    <a class="btn btn-secondary" href="support.html">Support</a>
+    <a class="btn btn-secondary" href="/privacy.html">Privacy</a>
+  </div>
+
+  <h2>What's inside</h2>
+  <ul>
+    <li><strong>Fleet dashboard.</strong> Every bot on one screen -- health, last run, next scheduled, alert state.</li>
+    <li><strong>Schedule.</strong> Cron-style schedules per bot, with timezone awareness and per-run overrides.</li>
+    <li><strong>Run inspector.</strong> Stream logs from a live run, jump to failures, copy tracebacks in one tap.</li>
+    <li><strong>macOS companion.</strong> Menu-bar quick launch and shared notifications for failures and summary windows.</li>
+    <li><strong>Widget surface.</strong> Lock-screen and home-screen widgets for the bots you care about most.</li>
+  </ul>
+
+  <h2>How it pairs</h2>
+  <p>BotFleet iOS talks to the BotFleet orchestrator running on your Mac. The orchestrator is the source of truth -- schedules, secrets, run history all live there. The iOS app is a thin client over your local network.</p>
+
+  <ol>
+    <li>On the Mac: open the BotFleet orchestrator and confirm it's reachable. You'll see its Bonjour URL.</li>
+    <li>On the iPhone: open BotFleet, tap "Pair", and scan the QR the Mac shows. (Or use Manual entry.)</li>
+    <li>That's it. The fleet shows up immediately. Settings remembers the pair; Settings &gt; Forget Pairing starts over.</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>Wire protocol:</strong> the iOS app and the Mac orchestrator implement the same contract documented in the open-source repo, so neither side changes shape without the other. <a href="https://botfleet.app">botfleet.app</a>.</p>
+  </div>
+
+  <h2>What it doesn't do</h2>
+  <ul>
+    <li><strong>Cloud relay.</strong> Both sides have to be on the same network. No traffic flows through Simple With Us.</li>
+    <li><strong>Bot authoring.</strong> We orchestrate; we don't write the bots. Bring your own scripts.</li>
+    <li><strong>Push for every run.</strong> Notifications are failures plus daily/weekly summary windows, not per-run pings.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>BotFleet does not transmit anything to Simple With Us. The app talks to the Mac you paired, period. Crash reports are opt-in and scrubbed of identifiers. Full notice at <a href="/privacy.html">/privacy</a>.</p>
+
+  <h2>Need help?</h2>
+  <p>The orchestrator can sometimes silently fail to start. <a href="support.html">The support page</a> covers the four checks that catch 90% of pair failures; if those don't help, write to <code>feedback@simplewithus.com</code> with the output of <code>launchctl list | grep botfleet</code> from your Mac.</p>
+
+  <p><a class="btn btn-primary" href="https://botfleet.app">Get BotFleet</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="support.html">Support</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

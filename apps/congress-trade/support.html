@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Congress.Trade Support -- Simple With Us</title>
+  <meta name="description" content="Disclosure feed, watchlist match, and known-issue reference for Congress.Trade on iOS." />
+  <meta name="theme-color" content="#1a1a2e" />
+  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/logos/swu-logo.png" alt="Simple With Us" />
+      <span>Simple With Us</span>
+    </a>
+    <nav class="nav">
+      <a href="/#apps">Apps</a>
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <span class="kicker">Congress.Trade</span>
+  <h1>Support</h1>
+  <p class="lede">Disclosure feed freshness, watchlist matching, and known-issue reference. If the four checks below don't fix it, send the output to <code>feedback@simplewithus.com</code> and we'll come back the same day.</p>
+
+  <h2>The four checks that catch 90% of feed issues</h2>
+  <ol>
+    <li><strong>Pull-to-refresh on the feed.</strong> Congress.Trade refreshes on launch and on pull. There is no background polling. If the feed looks stale, drag the list down once and let it reload.</li>
+    <li><strong>Watchlist exact match.</strong> Watchlist matching is on the ticker symbol, not the company name. If "BRK.A" is in your list and a filing says "Berkshire Hathaway", the app does not match. Add the exact ticker.</li>
+    <li><strong>Source availability.</strong> Senate and House filing systems occasionally have outages. If a refresh returns nothing for hours, check the disclosure system's status page; the app will catch up automatically once the source recovers.</li>
+    <li><strong>Daily digest toggle.</strong> If you're not getting the morning notification, check Settings &gt; Notifications &gt; Congress.Trade and confirm Daily Digest is enabled. The notification summary rolls up filings filed since the last digest.</li>
+  </ol>
+
+  <h2>Crash log or "Application keeps closing"</h2>
+  <p>If Congress.Trade crashes immediately on launch or after a specific screen, pull a Console log from the Mac (Console.app &gt; iPhone &gt; Congress.Trade) and send the last ~200 lines to <code>feedback@simplewithus.com</code>. If you can repro, note the exact steps and the iOS version (Settings &gt; General &gt; About).</p>
+
+  <h2>A filing is missing or wrong</h2>
+  <p>The app mirrors public disclosures; it does not edit or summarise them. If the underlying filing is wrong, the source document is wrong (write to the member). If the app misread the filing, email the trade ID and we'll fix the parser.</p>
+
+  <h2>Sending logs to support</h2>
+  <p>The app's Settings screen has a "Send Logs" action (under Diagnostics). It bundles the last few minutes into a single zip, scrubbed of your watchlist names, and opens a prefilled email to <code>feedback@simplewithus.com</code>. Attach the zip; we respond usually within a business day.</p>
+
+  <h2>Contact</h2>
+  <div class="callout">
+    <p><strong>feedback@simplewithus.com</strong> -- open a thread, don't worry about templates. Note your iOS version and the date you first saw the issue.</p>
+  </div>
+
+  <p style="margin-top: 32px;"><a class="btn btn-secondary" href="/">&larr; Back to Simple With Us</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
+      <span><a href="/">Home</a> &middot; <a href="/privacy.html">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
