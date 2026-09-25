@@ -2,8 +2,8 @@
 
 Marketing pages for tools published at [simplewithus.com](https://simplewithus.com).
 
-This repository hosts the static landing pages that appear under
-`/apps/<slug>/` on the Simple With Us site, one directory per published
+This repository hosts the static landing pages that appear at
+`/<slug>/` on the Simple With Us site, one directory per published
 tool.  It is intentionally thin: build artifacts live alongside the
 sources, and there are no runtime services.  Each app lives in its own
 fleet repo under the jaywedgeworth22 organization, this repo is the

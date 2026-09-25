@@ -16,7 +16,7 @@ shipped tool lives in its own fleet repo.
 | Usage Client | `jaywedgeworth22/usage-client`                                  | `https://client.simplewithus.com/...`     |
 | MiniMax Remote | `jaywedgeworth22/minimax-remote`                              | `https://remote.simplewithus.com/...`     |
 
-To add a new app: create `apps/<slug>/index.html`, link it from the
+To add a new app: create `<slug>/index.html` at the repo root, link it from the
 top-level nav, and add the matching brand domain in
 `~/apps/ios-fleet/apps.json` (cross-link with the iOS-fleet registry).
 
@@ -32,7 +32,7 @@ top-level nav, and add the matching brand domain in
 
 ## Adding a new app landing page
 
-1. Copy `apps/_template/` (when one exists) to `apps/<slug>/`.
+1. Copy `_template/` (when one exists) to `<slug>/` at the repo root.
 2. Replace the brand mark, copy, and links.  Follow the fleet UI copy
    guide at `/Users/jay/apps/FLEET-UI-COPY.md` and the brand-domain map
    in agent memory (search `fleet-brand-domains`).
