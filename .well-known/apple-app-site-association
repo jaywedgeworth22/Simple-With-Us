@@ -1,0 +1,98 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.hoghunter.macos"
+        ],
+        "components": [
+          {
+            "/": "/hoghunter/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.codecaps.macos"
+        ],
+        "components": [
+          {
+            "/": "/codecaps/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.codecaps.ios"
+        ],
+        "components": [
+          {
+            "/": "/codecaps/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.usage.client"
+        ],
+        "components": [
+          {
+            "/": "/usage-client/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.usage.local"
+        ],
+        "components": [
+          {
+            "/": "/usage-local/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.usage.macos"
+        ],
+        "components": [
+          {
+            "/": "/usage-monitor/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.harness.mac"
+        ],
+        "components": [
+          {
+            "/": "/harness/open/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "CC8UTF7ATG.com.simplewithus.minimaxremote"
+        ],
+        "components": [
+          {
+            "/": "/minimax-remote/open/*"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "CC8UTF7ATG.com.simplewithus.hoghunter.macos",
+      "CC8UTF7ATG.com.simplewithus.codecaps.macos",
+      "CC8UTF7ATG.com.simplewithus.codecaps.ios",
+      "CC8UTF7ATG.com.simplewithus.usage.client",
+      "CC8UTF7ATG.com.simplewithus.usage.local",
+      "CC8UTF7ATG.com.simplewithus.usage.macos",
+      "CC8UTF7ATG.com.simplewithus.harness.mac",
+      "CC8UTF7ATG.com.simplewithus.minimaxremote"
+    ]
+  }
+}
