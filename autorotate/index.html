@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autorotate.Codes -- Lock or rotate orientation per-app, per-URL, per-device</title>
-  <meta name="description" content="Autorotate.Codes is the iOS orientation rule engine. Lock or rotate by app, by URL, by Bluetooth device. Includes a native macOS counterpart." />
+  <title>Autorotate -- Zero-plaintext secret rotation for credentials</title>
+  <meta name="description" content="Autorotate rotates API keys, OAuth tokens, and database passwords across Infisical projects, files, Apple Keychain, Android Keystore, and HTTPS webhooks. No plaintext on disk. iOS, macOS, Android, and a web control center." />
   <meta name="theme-color" content="#1a1a2e" />
   <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
@@ -16,11 +16,10 @@
   <div class="container">
     <a class="brand" href="/">
       <img class="brand-mark" src="/assets/logos/swu-logo-wide.png" alt="Simple With Us" />
-      <span>Simple With Us</span>
     </a>
     <nav class="nav">
       <a href="/#apps">Apps</a>
-      <a href="/support.html">Support</a>
+      <a href="support.html">Support</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
@@ -29,48 +28,74 @@
 </header>
 
 <article class="article">
-  <span class="kicker">iOS orientation rules</span>
-  <h1>Lock or rotate orientation exactly when you need it.</h1>
-  <p class="lede">Autorotate.Codes is the iOS app for orientation that respects context. Lock Instagram to portrait. Force YouTube landscape when a specific Bluetooth speaker connects. Pin a reading app to portrait when you prop the phone in a desk cradle. The rules you want, when you want them, without the fight with iOS defaults.</p>
+  <span class="kicker">iOS / macOS / Android / Web</span>
+  <h1>Rotate every credential.  Persist plaintext none.</h1>
+  <p class="lede">Autorotate runs every rotation through a strict state machine -- LOCK, ROTATE, PUSH, VERIFY, COMMIT, AUDIT.  A failure at any step aborts and rolls back before new material is committed.  Secret material lives only in memory during a rotation; nothing is written to disk, logs, or the database unencrypted.</p>
 
   <div class="btn-row">
-    <a class="btn btn-primary" href="https://autorotate.codes">Open Autorotate.Codes</a>
+    <a class="btn btn-primary" href="#download">Get Autorotate</a>
     <a class="btn btn-secondary" href="support.html">Support</a>
     <a class="btn btn-secondary" href="/privacy.html">Privacy</a>
   </div>
 
+  <section id="download">
+    <h2>Install</h2>
+    <table class="install-table">
+      <thead>
+        <tr><th>Platform</th><th>Where</th><th>How</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>iOS</strong></td><td>TestFlight beta</td><td>Email <a href="mailto:feedback@simplewithus.com">feedback@simplewithus.com</a> with the UDID; we add you in under a business day.</td></tr>
+        <tr><td><strong>macOS</strong></td><td>Direct download (DMG)</td><td>Sign in to the control center to pull the notarized build; the same page also publishes your service token.</td></tr>
+        <tr><td><strong>Android</strong></td><td>Direct APK (sideload)</td><td>Same control center; the build is signed with the platform default debug key until release signing is set up.</td></tr>
+        <tr><td><strong>Web control center</strong></td><td><a href="mailto:feedback@simplewithus.com?subject=Autorotate%20web%20access">Self-hosted</a></td><td>Container image; point it at the same backend you already use for the desktop agent.</td></tr>
+      </tbody>
+    </table>
+    <p class="hint">Each install line above ships from the same control-center backend.  Until the public web host at <code>autorotate.codes</code> is live, all sign-ups go through the contact email above.</p>
+  </section>
+
   <h2>What's inside</h2>
   <ul>
-    <li><strong>Per-app rules.</strong> Pick an app, pick a locked or forced orientation. The rule takes effect the next time the app comes to the foreground.</li>
-    <li><strong>Per-URL rules.</strong> Inside supported browsers, match on URL pattern. Some sites assume landscape; some force their own layout regardless.</li>
-    <li><strong>Bluetooth triggers.</strong> Pair a device -- a car mount, a gym cradle, a desk dock -- and the rule fires when it connects.</li>
-    <li><strong>Schedule rules.</strong> Time-of-day rules for the times your context shifts. Work hours portrait, evening unlocked.</li>
-    <li><strong>macOS counterpart.</strong> The Mac sibling handles display-rotation rules. Rules can roam between devices with iCloud Drive.</li>
+    <li><strong>Connectors.</strong> Infisical projects, files, Apple Keychain, Android Keystore, HTTPS webhooks -- one rotation envelope covers them all.</li>
+    <li><strong>State machine.</strong> LOCK the previous version, ROTATE to new material, PUSH to the target store, VERIFY the new value round-trips, COMMIT the audit record, then AUDIT the chain.  Every transition is durable.</li>
+    <li><strong>Zero plaintext.</strong> All secret material stays in process memory during a rotation.  Nothing is checkpointed to disk, logs, or the database.  Crashes abort the rotation rather than leak.</li>
+    <li><strong>Hash-chained audit.</strong> Every rotation produces a tamper-evident record hash-linked to the previous one.  Breaks in the chain are loud, not silent.</li>
+    <li><strong>Native apps.</strong> iOS and macOS for the credentials you actually use on Apple hardware; Android for the keystore you hand to the agent; a web control center for the policy and approval path.</li>
+    <li><strong>Offline-tolerant.</strong> A desktop agent queues rotations when the target store is unreachable and replays them deterministically on reconnect -- no double-rotate, no missed-rotate.</li>
   </ul>
 
   <h2>How it works</h2>
-  <p>Autorotate.Codes hooks into iOS orientation events through the standard app-foreground lifecycle. The app applies your rule when an app comes forward, when a URL pattern matches, when a paired Bluetooth device connects, or when the schedule fires. There is no jailbreak, no private API; the app respects the limits iOS exposes.</p>
-
+  <p>Autorotate is built around the principle that any rotation must be auditable end-to-end, reversible on any failure, and never expose plaintext at rest.  Every connector goes through the same six-step pipeline:</p>
   <ol>
-    <li>Open the Rules screen and add your first rule. Pick the trigger (app, URL, device, schedule) and the orientation.</li>
-    <li>Test by opening the targeted app or visiting the targeted URL.</li>
-    <li>Tune. The Diagnostics screen shows recent rule firings and skipped events.</li>
+    <li><strong>LOCK.</strong> Acquire a transaction lock on the previous credential so two rotations cannot race.  Lock TTL is short; rotation must complete inside the window.</li>
+    <li><strong>ROTATE.</strong> Generate new material inside the agent process.  Use the connector's native generator when one exists (Keychain &amp; Keystore prefer platform entropy; HTTPS webhooks require a server-issued nonce).</li>
+    <li><strong>PUSH.</strong> Write the new value into the target store via the store's authenticated API.  The agent never reads the old value back in plaintext.</li>
+    <li><strong>VERIFY.</strong> Round-trip the new value: read it through a separate code path, decode the same payload, confirm it matches the rotation envelope.  A failed verify rolls back the PUSH.</li>
+    <li><strong>COMMIT.</strong> Append a hash-chained audit record.  The record contains the rotation IDs, target IDs, timestamps, and the chain hash -- never the secret material itself.</li>
+    <li><strong>AUDIT.</strong> Notify the policy layer (web control center, Slack if configured, or webhook subscribers) and unlock the previous credential.</li>
   </ol>
+  <p>If the rotation fails at any step the state machine aborts, releases the lock, and emits a structured error.  No partially-rotated credentials remain in the target store.</p>
+
+  <h2 id="mac">Mac version</h2>
+  <p>Autorotate for Mac is the desktop agent -- the service that holds the lock window, generates new material in process memory, pushes to every connected target, and round-trips the verify before committing the audit record.  It runs as a launchd-managed service.  Connectors plug in via <code>~/Library/Application Support/Autorotate/connectors/</code>; the web control center publishes a token you paste on first run.</p>
+  <p>Direct download (DMG).  Email <a href="mailto:feedback@simplewithus.com?subject=Autorotate%20for%20Mac">feedback@simplewithus.com</a> for the build link until the notarized installer is published.</p>
 
   <h2>What it doesn't do</h2>
   <ul>
-    <li><strong>Force apps that ignore orientation.</strong> Some apps (most video players, most camera apps) take over orientation lock at the app level. The rule fires; the app ignores it. We surface the rule fire in Diagnostics; the override is the app's, not ours.</li>
-    <li><strong>iPad split-view per-window.</strong> iPadOS exposes per-window orientation; that comes in a later release.</li>
-    <li><strong>System-wide rotation without a rule.</strong> Every action requires an explicit rule. The app never changes orientation behind your back.</li>
+    <li><strong>No plaintext on disk.</strong> Secret material lives only in memory during a rotation and in the destination store (Infisical, Keychain, Keystore, or the webhook target).  Autorotate's own database stores identifiers, hashes, and the audit chain only.</li>
+    <li><strong>No background rotations.</strong> Every rotation is explicit.  Schedules exist but they require the operator to compose an action; nothing rotates silently on a timer.</li>
+    <li><strong>No key escrow.</strong> Autorotate never sees your credentials in a form that lets it impersonate them to your services.  It only writes what you've authorized it to write, into the stores you've connected.</li>
+    <li><strong>No plaintext logging.</strong> Logs are scrubbed for secret-shaped strings before they leave the agent.  Crash reports are opt-in.</li>
   </ul>
 
   <h2>Privacy</h2>
-  <p>Autorotate.Codes only needs to manage your orientation rules. No telemetry, no account, no analytics. Rules sync through iCloud Drive if you opt in; otherwise they stay on-device. Crash reports are opt-in. Full notice at <a href="/privacy.html">/privacy</a>.</p>
+  <p>Autorotate never persists plaintext secrets.  Audit records are hash-chained and tamper-evident; the chain head is signed on every commit.  No telemetry, no analytics.  Crash reports are opt-in and scrubbed for anything that looks like a token, key, or password.</p>
+  <p>Full notice at <a href="/privacy.html">/privacy</a>.</p>
 
   <h2>Need help?</h2>
-  <p>If a rule fires but the app ignores it, that's almost always the app, not the rule. <a href="support.html">The support page</a> covers the four checks that catch 90% of "rule did nothing" reports; if those don't help, write to <code>feedback@simplewithus.com</code> with your iOS version and the app you were testing.</p>
+  <p>The most common hiccup on first run is the connector authorization -- Infisical needs a service token, Keychain &amp; Keystore need the user to confirm access on first use, webhooks need an HMAC pre-shared key.  <a href="support.html">The support page</a> walks each connector; if those don't help, write to <code>feedback@simplewithus.com</code> with the connector name, the rotation ID, and what you saw.</p>
 
-  <p><a class="btn btn-primary" href="https://autorotate.codes">Get Autorotate.Codes</a></p>
+  <p><a class="btn btn-primary" href="#download">Get Autorotate</a></p>
 </article>
 
 <footer class="site-footer">

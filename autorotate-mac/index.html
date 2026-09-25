@@ -3,84 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Autorotate for Mac -- Per-app and per-display rotation rules for macOS</title>
-  <meta name="description" content="Autorotate for Mac sets display rotation per-app and per-display arrangement. Native macOS counterpart to Autorotate.Codes on iOS." />
-  <meta name="theme-color" content="#1a1a2e" />
+  <title>Autorotate -- Zero-plaintext secret rotation</title>
+  <meta http-equiv="refresh" content="0; url=https://simplewithus.com/autorotate/#mac" />
+  <link rel="canonical" href="https://simplewithus.com/autorotate/#mac" />
+  <meta name="description" content="Autorotate moved to a single page with the iOS app." />
   <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/logos/swu-logo-wide.png" alt="Simple With Us" />
-      <span>Simple With Us</span>
-    </a>
-    <nav class="nav">
-      <a href="/#apps">Apps</a>
-      <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<article class="article">
-  <span class="kicker">macOS display rotation</span>
-  <h1>Per-app rotation rules, with a settings UI that doesn't fight you.</h1>
-  <p class="lede">Autorotate for Mac is the macOS sibling of Autorotate.Codes. Pin a vertical display to portrait when Xcode opens. Force a presentation display to landscape when Keynote goes full-screen. Apply rules per-app and per-display-arrangement, with a UI that explains what each rule does and what macOS will and won't let us change.</p>
-
-  <div class="btn-row">
-    <a class="btn btn-primary" href="https://autorotate.codes/mac">Open Autorotate for Mac</a>
-    <a class="btn btn-secondary" href="support.html">Support</a>
-    <a class="btn btn-secondary" href="/privacy.html">Privacy</a>
-  </div>
-
-  <h2>What's inside</h2>
-  <ul>
-    <li><strong>Per-app rules.</strong> Pick an app, pick a rotation. The rule fires when the app comes forward, per display.</li>
-    <li><strong>Per-arrangement rules.</strong> macOS exposes the current display arrangement. Apply a rotation when the arrangement matches -- docked, undocked, external display attached.</li>
-    <li><strong>Native UI.</strong> A SwiftUI rule editor, no preferences pane buried in System Settings.</li>
-    <li><strong>macOS LaunchAgent.</strong> Optional helper that applies rules at login. Off by default; you opt in.</li>
-    <li><strong>Shared rules with iOS.</strong> Optional iCloud Drive sync between the Mac and iOS apps. Rules roam; UI stays native.</li>
-  </ul>
-
-  <h2>How it works</h2>
-  <p>Autorotate for Mac reads the active app and the current display arrangement, then asks macOS to apply the matching rotation rule. macOS exposes display rotation through the standard CoreGraphics APIs; we use those. The app respects the limits of macOS -- some displays report rotation support but ignore the request.</p>
-
-  <ol>
-    <li>Open the app and add your first rule. Pick the app and the rotation; pick the displays it applies to.</li>
-    <li>Test by switching to the targeted app. The rotation should apply within a second.</li>
-    <li>Optionally enable the LaunchAgent to apply rules at login.</li>
-  </ol>
-
-  <h2>What it doesn't do</h2>
-  <ul>
-    <li><strong>Force displays that ignore rotation.</strong> Some external displays report rotation support but apply only portrait/landscape. The rule fires; the display decides. The app surfaces the response in the Diagnostics screen.</li>
-    <li><strong>Touch bar rotation.</strong> The Touch Bar has no rotation. We do not touch it.</li>
-    <li><strong>System-wide rotation without a rule.</strong> Every action requires an explicit rule. The app never changes rotation behind your back.</li>
-  </ul>
-
-  <h2>Privacy</h2>
-  <p>Autorotate for Mac only needs to manage your rotation rules. No telemetry, no account, no analytics. Rules sync through iCloud Drive if you opt in; otherwise they stay on the Mac. Crash reports are opt-in. Full notice at <a href="/privacy.html">/privacy</a>.</p>
-
-  <h2>Need help?</h2>
-  <p>If a rule fires but the display does not rotate, it's almost always the display's EDID lying to macOS. <a href="support.html">The support page</a> covers the four checks that catch 90% of "rule did nothing" reports; if those don't help, write to <code>feedback@simplewithus.com</code> with your macOS version and the display model.</p>
-
-  <p><a class="btn btn-primary" href="https://autorotate.codes/mac">Get Autorotate for Mac</a></p>
-</article>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="copy">
-      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
-      <span><a href="/">Home</a> &middot; <a href="support.html">Support</a> &middot; <a href="/privacy.html">Privacy</a></span>
-    </div>
-  </div>
-</footer>
-
+<p style="text-align:center;margin:48px auto;max-width:36ch;font-family:system-ui,sans-serif;">
+  Autorotate for Mac moved to a single page with the iOS app.
+  <a href="https://simplewithus.com/autorotate/#mac">Continue to Autorotate</a>.
+</p>
 </body>
 </html>
