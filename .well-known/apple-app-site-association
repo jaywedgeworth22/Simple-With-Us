@@ -57,7 +57,7 @@
         ],
         "components": [
           {
-            "/": "/usage-monitor/open/*"
+            "/": "/usage-client/open/*"
           }
         ]
       },

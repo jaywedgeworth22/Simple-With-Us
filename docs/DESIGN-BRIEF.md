@@ -234,7 +234,7 @@ The fleet-wide picture (every domain, registrar, and host) belongs in the privat
 | CodeCaps Companion (iOS) | `com.simplewithus.codecaps.ios` | No | Team `CC8UTF7ATG`. |
 | Usage Client Monitor (iOS) | `com.simplewithus.usage.client` | No | The Sep 23 fix reverted `com.simplewithus.usagemonitor.*`; the Sep 22 Slack note is stale.  App Store record pending. |
 | Usage Local Monitor (iOS) | `com.simplewithus.usage.local` | No | App Store record pending. |
-| Usage Monitor menu bar (macOS) | `com.simplewithus.usage.macos` | No | From `script/build_and_run.sh`. |
+| Usage Monitor menu bar (macOS) | `com.simplewithus.usage.macos` | No | From `script/build_and_run.sh`.  Has no catalog page of its own (`usage-monitor` is not a slug in `apps/index.json`), so its AASA component points at the `usage-client` slug's path instead. |
 | Harness (macOS) | `com.simplewithus.harness.mac` | No | Ad-hoc signed, not registered with Apple, no team. |
 | MiniMax Remote (iOS) | `com.simplewithus.minimaxremote` | No | Team `CC8UTF7ATG`. |
 
@@ -242,7 +242,7 @@ Excluded on purpose: test bundles, widgets, Safari extensions and their containe
 
 ### 7.2 The file
 
-`.well-known/apple-app-site-association` (no extension, no comments) lists all eight app IDs as `CC8UTF7ATG.<bundle id>` under `applinks.details` and `webcredentials.apps`.  Listing an app whose entitlement does not declare the domain does nothing, so pre-listing is harmless.  Each app gets a **narrow** component, `{"/": "/<slug>/open/*"}` (HogHunter is `/hoghunter/open/*`), so a Mac or iPhone with the app installed never swallows the marketing pages.  When an app starts declaring the domain, set `associatedDomains: true` in `apps/index.json`, and CI checks that it is listed.
+`.well-known/apple-app-site-association` (no extension, no comments) lists all eight app IDs as `CC8UTF7ATG.<bundle id>` under `applinks.details` and `webcredentials.apps`.  Listing an app whose entitlement does not declare the domain does nothing, so pre-listing is harmless.  Each app gets a **narrow** component, `{"/": "/<slug>/open/*"}` (HogHunter is `/hoghunter/open/*`), so a Mac or iPhone with the app installed never swallows the marketing pages.  An app with no catalog page of its own reuses the closest existing slug's path instead of inventing one that does not exist: `usage.macos` (the menu bar app, not itself a catalog entry) uses `/usage-client/open/*`, the same self-hosted-server product family on another platform.  When an app starts declaring the domain, set `associatedDomains: true` in `apps/index.json`, and CI checks that it is listed.
 
 ### 7.3 Serving it as `application/json` with no redirect
 

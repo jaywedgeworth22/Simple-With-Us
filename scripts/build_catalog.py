@@ -68,9 +68,19 @@ def app_store_url(url: str, slug: str, provider_token) -> str:
     return f"{url}?ct=swu-{slug}-card"
 
 
+def primary_link(app: dict):
+    """Return the app's primary link, or None if it has none.
+
+    Never raises: lint() is what enforces that every app has a primary
+    link, so this just reports the fact instead of assuming it holds.
+    """
+    links = app.get("links") or {}
+    return app.get("page") or links.get("website") or links.get("github")
+
+
 def card(app: dict, provider_token) -> str:
     links = app["links"]
-    primary = app.get("page") or links.get("website") or links.get("github")
+    primary = primary_link(app)
     secondary = []
     if links.get("website") and links["website"] != primary:
         secondary.append((links["website"], "Website"))
@@ -87,8 +97,11 @@ def card(app: dict, provider_token) -> str:
     out.append('  <div class="card-head">')
     out.append(f'    <img class="card-icon" src="{attr(app["icon"])}" alt="" width="48" height="48" loading="lazy" decoding="async">')
     out.append("    <div>")
-    rel = "" if primary.startswith("/") else ' rel="noopener"'
-    out.append(f'      <h3><a href="{attr(primary)}"{rel}>{gap(app["name"])}</a></h3>')
+    if primary:
+        rel = "" if primary.startswith("/") else ' rel="noopener"'
+        out.append(f'      <h3><a href="{attr(primary)}"{rel}>{gap(app["name"])}</a></h3>')
+    else:
+        out.append(f'      <h3>{gap(app["name"])}</h3>')
     pills = "".join(f'<li class="pill">{gap(p)}</li>' for p in app["platforms"])
     out.append(f'      <ul class="pills" aria-label="Platforms">{pills}</ul>')
     out.append("    </div>")
@@ -169,6 +182,12 @@ def main() -> int:
     check = "--check" in sys.argv
     data = json.loads(DATA.read_text())
     errors = lint(data)
+    if errors:
+        # Never call render() on data lint has already rejected: card() assumes
+        # each app has a primary link, and lint() is what guarantees that.
+        for e in errors:
+            print("error:", e, file=sys.stderr)
+        return 1
     page = PAGE.read_text()
     new = page
     for name, body in render(data).items():
