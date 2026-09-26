@@ -181,7 +181,7 @@ code, pre, kbd { font-family: var(--font-mono); font-size: 0.9em; }
 .card-links a:hover { text-decoration: underline; }
 
 /* Honest-claims list */
-.claims { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); list-style: none; padding: 0; margin: 0; }
+.claims { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); list-style: none; padding: 0; margin: 0; }
 .claims li { padding: var(--space-4) var(--space-5); border: 1px solid var(--border); border-radius: var(--radius-2); background: var(--bg); }
 .claims strong { display: block; margin-bottom: var(--space-1); }
 .claims p { margin: 0; color: var(--text-muted); font-size: var(--step--1); }
