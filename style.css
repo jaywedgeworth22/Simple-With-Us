@@ -100,14 +100,29 @@ img, svg { max-width: 100%; height: auto; display: block; }
 .brand-mark {
   height: 28px;
   width: auto;
+  max-width: 100%;
   display: inline-block;
   vertical-align: middle;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 .brand-mark-lg {
   height: 56px;
   width: auto;
+  max-width: 100%;
   display: inline-block;
   vertical-align: middle;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.brand picture {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .brand-mark { height: 22px; }
+  .brand-mark-lg { height: 38px; }
 }
 .nav {
   display: flex;
