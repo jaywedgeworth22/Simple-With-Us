@@ -39,6 +39,8 @@ the matching brand domain in `~/apps/ios-fleet/apps.json` (cross-link with
 the iOS-fleet registry).  Never move or delete an existing
 `<slug>/support.html`: App Store Connect records point at those URLs.
 
+Hosting and routing (apexes, hostnames, hosts, deploy paths): see [`Fleet-OPS/docs/DOMAINS-AND-ROUTING.md`](https://github.com/jaywedgeworth22/Fleet-OPS/blob/main/docs/DOMAINS-AND-ROUTING.md). Built from live Cloudflare, Vercel, Coolify, Namecheap/RDAP, and GitHub APIs by CLAUDE on 2026-09-25; refresh via `Fleet-OPS/scripts/domain-inventory/run-all.sh`.
+
 ## Branch and worktree conventions
 
 * Default branch is `main`.
