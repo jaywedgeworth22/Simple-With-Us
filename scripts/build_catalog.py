@@ -112,7 +112,7 @@ def render(data: dict) -> dict:
     token = data.get("appStoreProviderToken")
     grid = ['<ul class="grid" role="list">'] + [card(a, token) for a in apps] + ["</ul>"]
     public_src = sum(1 for a in apps if a["links"].get("github"))
-    facts = f'<p class="facts">{len(apps)} apps · {public_src} with public source · Apache-2.0</p>'
+    facts = f'<p class="facts">{len(apps)} apps · {public_src} with public source · Apache\u20112.0</p>'
     return {"facts": facts, "grid": "\n".join(grid)}
 
 

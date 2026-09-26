@@ -188,7 +188,7 @@ code, pre, kbd { font-family: var(--font-mono); font-size: 0.9em; }
 
 /* Code block with copy button */
 .code { position: relative; background: var(--code-bg); color: var(--code-text); border-radius: var(--radius-2); padding: var(--space-4) var(--space-5); overflow-x: auto; }
-.code pre { margin: 0; white-space: pre; }
+.code pre { margin: 0; white-space: pre; padding-right: 64px; }
 .code .copy { position: absolute; top: var(--space-2); right: var(--space-2); min-height: 32px; font: 600 0.75rem var(--font-sans); padding: 0 var(--space-3); border-radius: var(--radius-1); border: 1px solid rgb(255 255 255 / 0.2); background: transparent; color: var(--code-text); cursor: pointer; }
 .code .copy[hidden] { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
