@@ -1,0 +1,21 @@
+name: Site Check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Fails when index.html is stale against apps/index.json, a link has the wrong shape,
+      # an image is over the 200 KB budget, or the AASA file is invalid.
+      - run: python3 scripts/build_catalog.py --check

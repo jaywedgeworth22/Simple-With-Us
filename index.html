@@ -1,222 +1,299 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simple With Us -- Tools That Work Alongside You</title>
-  <meta name="description" content="Apps for traders, coders, agents, and anyone who'd rather have software handle the boring parts. All under one family. iOS, macOS, and the web." />
-  <meta name="theme-color" content="#1a1a2e" />
-  <link rel="icon" type="image/png" href="/assets/logos/swu-logo-whitecircle-1024.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple With Us — Open Tools, Built in Public</title>
+  <meta name="description" content="A small catalog of apps for AI coders, markets, and everyday Mac and iPhone chores.  Most are open source under Apache-2.0.">
+  <link rel="canonical" href="https://simplewithus.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simple With Us — Open Tools, Built in Public">
+  <meta property="og:description" content="A small catalog of apps for AI coders, markets, and everyday Mac and iPhone chores.">
+  <meta property="og:url" content="https://simplewithus.com/">
+  <meta property="og:image" content="https://simplewithus.com/assets/logos/swu-logo-1024.png">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to Content</a>
 
 <header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">
-      <img class="brand-mark" src="/assets/logos/swu-logo-wide.png" alt="Simple With Us" />
-    </a>
-    <nav class="nav">
+  <div class="wrap">
+    <a class="wordmark" href="/"><span class="caret" aria-hidden="true">&gt;</span>Simple With Us</a>
+    <nav class="site-nav" aria-label="Primary">
       <a href="#apps">Apps</a>
+      <a href="#honest">How It Works</a>
+      <a href="#source">Source</a>
       <a href="/support.html">Support</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a class="cta" href="mailto:feedback@simplewithus.com">Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="container">
-    <span class="badge">A small studio. One family. Built to be useful, not noisy.</span>
-    <h1>Tools that work alongside you.</h1>
-    <p class="tagline">A small, opinionated collection of iOS, macOS, and web apps for traders, coders, agents, and anyone who'd rather have software handle the boring parts.  Independently built.  iOS beta builds ship through TestFlight first; macOS apps ship as direct downloads from each app's brand domain.  No telemetry, no ads.</p>
-  </div>
-</section>
-
-<section class="section" id="apps">
-  <div class="container">
-    <h2>The whole family</h2>
-    <p class="lede">Each app stands on its own. No surprise subscriptions, no data lock-in, no ads. Click through for download links and per-app support.</p>
-
-    <div class="app-grid">
-
-      <a class="app-card" href="/minimax-remote/">
-        <div class="app-card-head">
-          <span class="app-icon" style="background: linear-gradient(135deg,#1a1a2e,#3a3a6e)">MR</span>
-          <div>
-            <h3>MiniMax Remote</h3>
-            <span class="app-meta"><span class="pill">iOS</span></span>
-          </div>
-        </div>
-        <p>Drive MiniMax Code from your iPhone. Full mobile dashboard for chat, sessions, scheduled tasks, and your fleet of agents. Pairs to a Mac via QR.</p>
-      </a>
-
-      <a class="app-card" href="/botfleet/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/bf.png" alt="BotFleet" />
-          <div>
-            <h3>BotFleet</h3>
-            <span class="app-meta"><span class="pill">iOS</span><span class="pill">macOS</span></span>
-          </div>
-        </div>
-        <p>Bot orchestration platform -- schedule, monitor, and inspect automation fleets from one place. Native iOS app and a macOS menu-bar companion.</p>
-      </a>
-
-      <a class="app-card" href="/socratic-trade/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/st.png" alt="Socratic.Trade" />
-          <div>
-            <h3>Socratic.Trade</h3>
-            <span class="app-meta"><span class="pill">iOS</span></span>
-          </div>
-        </div>
-        <p>US equity trading companion. Track your positions, follow the news that matters, and execute through your existing broker -- not ours.</p>
-      </a>
-
-      <a class="app-card" href="/congress-trade/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/ct.png" alt="Congress.Trade" />
-          <div>
-            <h3>Congress.Trade</h3>
-            <span class="app-meta"><span class="pill">iOS</span></span>
-          </div>
-        </div>
-        <p>Congressional trade tracking. Members of Congress disclose trades within days; we surface them within minutes, matched against your watchlist.</p>
-      </a>
-
-      <a class="app-card" href="/usage-client/">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/um.png" alt="Usage Client Monitor" />
-          <div>
-            <h3>Usage Client Monitor</h3>
-            <span class="app-meta"><span class="pill">iOS</span><span class="pill">Server</span></span>
-          </div>
-        </div>
-        <p>API usage dashboard for OpenAI, Anthropic, Google, and a dozen others. Server-backed for cross-device; self-host the server free.</p>
-      </a>
-
-      <a class="app-card" href="/usage-local/">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/um.png" alt="Usage Local Monitor" />
-          <div>
-            <h3>Usage Local Monitor</h3>
-            <span class="app-meta"><span class="pill">iOS</span></span>
-          </div>
-        </div>
-        <p>On-device AI usage monitor. No account, no server, fully local. Caps, daily spend, and model availability, all from your phone.</p>
-      </a>
-
-      <a class="app-card" href="/dealdex/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/dd.png" alt="DealDex" />
-          <div>
-            <h3>DealDex</h3>
-            <span class="app-meta"><span class="pill">iOS</span><span class="pill">Android</span></span>
-          </div>
-        </div>
-        <p>Find the best-priced Pokémon card listings. Scan live eBay and Mercari singles and score the ask against TCGPlayer, Cardmarket, eBay solds, and PriceCharting.</p>
-      </a>
-
-      <a class="app-card" href="/autorotate/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/ar.png" alt="Autorotate" />
-          <div>
-            <h3>Autorotate</h3>
-            <span class="app-meta"><span class="pill">iOS</span><span class="pill">macOS</span><span class="pill">Android</span><span class="pill">Web</span></span>
-          </div>
-        </div>
-        <p>Zero-plaintext credential rotation. Rotate API keys, OAuth tokens, and database passwords across Infisical, files, Apple Keychain, Android Keystore, and HTTPS webhooks -- with no plaintext on disk.</p>
-      </a>
-
-      <a class="app-card" href="/contactlogo/" rel="noopener">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/cl.png" alt="ContactLogo" />
-          <div>
-            <h3>ContactLogo</h3>
-            <span class="app-meta"><span class="pill">iOS</span><span class="pill">macOS</span></span>
-          </div>
-        </div>
-        <p>Brand every contact in your address book with their company logo. One-time batch, fully on-device, with an undo log for safety.</p>
-      </a>
-
-      <a class="app-card" href="/codecaps/">
-        <div class="app-card-head">
-          <img class="app-icon" src="/assets/app-icons/cc.png" alt="CodeCaps Companion" />
-          <div>
-            <h3>CodeCaps Companion</h3>
-            <span class="app-meta"><span class="pill">iOS</span></span>
-          </div>
-        </div>
-        <p>Track which AI services you use and how close each one is to its ceiling -- caps, rate limits, and quota windows in one view.</p>
-      </a>
-
-      </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>What you should know</h2>
-    <p class="lede">The same handful of values across the whole family.</p>
-
-    <div class="app-grid">
-      <div class="callout">
-        <p><strong>No data locked in.</strong> Every app exports its core data as CSV or JSON. If we shut down tomorrow, your work leaves with you in a single tap.</p>
-      </div>
-      <div class="callout">
-        <p><strong>No telemetry by default.</strong> Only what each app explicitly needs to function. Crash reports are opt-in and never tied to your identity unless you ask.</p>
-      </div>
-      <div class="callout">
-        <p><strong>On-device by default.</strong> Where a feature needs network access, it tells you; you can deny it. There is no analytics or ad SDK on this site.</p>
-      </div>
-      <div class="callout">
-        <p><strong>One support address.</strong> Every app's "App Review" contact rolls up to <code>feedback@simplewithus.com</code>. You'll get a real human, usually within a day.</p>
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Open Tools, Built in Public</h1>
+      <p>Simple With Us is a small catalog of apps for AI coders, markets, and everyday Mac and iPhone chores.  Most of them are open source, and every card says exactly how you can get the app today.</p>
+      <!-- catalog:facts:start -->
+<p class="facts">12 apps · 11 with public source · Apache‑2.0</p>
+      <!-- catalog:facts:end -->
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#apps">Browse the Apps</a>
+        <a class="btn" href="https://github.com/jaywedgeworth22" rel="noopener">View on GitHub</a>
       </div>
     </div>
+  </section>
+
+  <section class="section" id="apps" aria-labelledby="apps-title">
+    <div class="wrap">
+      <h2 id="apps-title">The Apps</h2>
+      <p class="lede">Each card links to the app's page, its source, and its support page.  A store or beta button appears only when the link behind it works.</p>
+      <!-- catalog:grid:start -->
+<ul class="grid" role="list">
+<li class="card" style="--card-accent: #0f766e">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/codecaps.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/codecaps/">CodeCaps</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">macOS</li><li class="pill">iOS</li></ul>
+    </div>
   </div>
-</section>
+  <p>AI coding quotas in the macOS menu bar, with an iPhone companion.</p>
+  <span class="status status-beta">Private beta</span>
+  <div class="card-links">
+    <a href="https://codecaps.simplewithus.com/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/CodeCaps" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/codecaps/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #ea580c">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/usage-monitor.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/usage-client/">Usage Client Monitor</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li><li class="pill">Web</li></ul>
+    </div>
+  </div>
+  <p>API and agent quota and spend across providers, synced through a server you can self-host.</p>
+  <span class="status status-beta">App Store record pending</span>
+  <div class="card-links">
+    <a href="https://usage.jays.services/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/Usage-Monitor" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/usage-client/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #ea580c">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/usage-monitor.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/usage-local/">Usage Local Monitor</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li></ul>
+    </div>
+  </div>
+  <p>On-device AI usage monitor.  No account and no server.</p>
+  <span class="status status-beta">App Store record pending</span>
+  <div class="card-links">
+    <a href="https://github.com/jaywedgeworth22/Usage-Monitor" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/usage-local/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #0ea5e9">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/harness.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="https://github.com/jaywedgeworth22/Harness" rel="noopener">Harness</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">macOS</li></ul>
+    </div>
+  </div>
+  <p>A friendly adaptation of DeepSeek&#x27;s dsh agent harness, with DeepSeek and MiniMax parity.</p>
+  <span class="status status-source">Build from source</span>
+</li>
+<li class="card" style="--card-accent: #ff6b35">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/minimax-remote.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/minimax-remote/">MiniMax Remote</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li></ul>
+    </div>
+  </div>
+  <p>Drive MiniMax Code from your iPhone.  Chat, sessions, scheduled tasks, and agents.</p>
+  <span class="status status-beta">Private beta</span>
+  <div class="card-links">
+    <a href="/minimax-remote/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #0284c7">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/botfleet.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/botfleet/">BotFleet</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li><li class="pill">macOS</li><li class="pill">Web</li></ul>
+    </div>
+  </div>
+  <p>Pick a platform for each bot.  Use your own subscriptions and APIs.</p>
+  <span class="status status-live">Add-ons in testing</span>
+  <div class="card-links">
+    <a href="https://botfleet.app/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/BotFleet" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/botfleet/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #2563eb">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/socratic-trade.svg" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/socratic-trade/">Socratic.Trade</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">Web</li><li class="pill">iOS</li></ul>
+    </div>
+  </div>
+  <p>Agentic trading console for Alpaca, Tradier, and Robinhood accounts.  Not investment advice.</p>
+  <span class="status status-live">Live on the web</span>
+  <div class="card-links">
+    <a href="https://socratictrade.com/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/Socratic-Trade" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/socratic-trade/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #7c3aed">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/congress-trade.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/congress-trade/">Congress.Trade</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">Web</li><li class="pill">iOS</li></ul>
+    </div>
+  </div>
+  <p>Public STOCK Act disclosures from the House, Senate, and Executive Branch.</p>
+  <span class="status status-live">Live on the web</span>
+  <div class="card-links">
+    <a href="https://congress.trade/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/Congress.Trade" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/congress-trade/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #92400e">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/hoghunter.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="https://github.com/jaywedgeworth22/HogHunter" rel="noopener">HogHunter</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">macOS</li></ul>
+    </div>
+  </div>
+  <p>Mac menu bar view of CPU and memory hogs right now, over the past hour, and over the past day.</p>
+  <span class="status status-source">Build from source</span>
+</li>
+<li class="card" style="--card-accent: #6366f1">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/contactlogo.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/contactlogo/">ContactLogo</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li><li class="pill">macOS</li><li class="pill">Android</li><li class="pill">Web</li></ul>
+    </div>
+  </div>
+  <p>Brand icons for your address book, matched review-first.</p>
+  <span class="status status-live">Live on the web</span>
+  <div class="card-links">
+    <a href="https://contactlogo.com/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/ContactLogo" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/contactlogo/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #b45309">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/dealdex.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/dealdex/">DealDex</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li><li class="pill">Android</li><li class="pill">Web</li></ul>
+    </div>
+  </div>
+  <p>Pokémon listing desk.  Scan eBay and Mercari singles and score each ask against market prices.</p>
+  <span class="status status-live">Live on the web</span>
+  <div class="card-links">
+    <a href="https://dealdex.net/" rel="noopener">Website<span aria-hidden="true"> ↗</span></a>
+    <a href="https://github.com/jaywedgeworth22/DealDex" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/dealdex/support.html">Support</a>
+  </div>
+</li>
+<li class="card" style="--card-accent: #059669">
+  <div class="card-head">
+    <img class="card-icon" src="/assets/app-icons/autorotate.png" alt="" width="48" height="48" loading="lazy" decoding="async">
+    <div>
+      <h3><a href="/autorotate/">Autorotate</a></h3>
+      <ul class="pills" aria-label="Platforms"><li class="pill">iOS</li><li class="pill">macOS</li><li class="pill">Android</li><li class="pill">Web</li></ul>
+    </div>
+  </div>
+  <p>Zero-plaintext secret rotation across web, iOS, macOS, and Android.</p>
+  <span class="status status-beta">Private beta</span>
+  <div class="card-links">
+    <a href="https://github.com/jaywedgeworth22/Autorotate" rel="noopener">Source<span aria-hidden="true"> ↗</span></a>
+    <a href="/autorotate/support.html">Support</a>
+  </div>
+</li>
+</ul>
+      <!-- catalog:grid:end -->
+    </div>
+  </section>
+
+  <section class="section" id="honest" aria-labelledby="honest-title">
+    <div class="wrap">
+      <h2 id="honest-title">How This Catalog Stays Honest</h2>
+      <p class="lede">A catalog is only useful if it is right.  These rules are enforced by the build, not by memory.</p>
+      <ul class="claims" role="list">
+        <li><strong>Generated From One File</strong><p>Every card is rendered from <a href="https://github.com/jaywedgeworth22/Simple-With-Us/blob/main/apps/index.json" rel="noopener"><code>apps/index.json</code></a>.  The build fails when this page and that file disagree.</p></li>
+        <li><strong>No Dead Buttons</strong><p>An App Store or TestFlight button only appears when it points at a real listing or a public invite.  Invite-only betas say so instead.</p></li>
+        <li><strong>Claims Link to Proof</strong><p>Each app links to its source repo or its own site, so anything said here can be checked there.</p></li>
+        <li><strong>What Leaves Your Device</strong><p>Some apps send crash reports so bugs get fixed.  Read the <a href="/privacy.html">privacy notice</a> before you install, and ask us anything.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="source" aria-labelledby="source-title">
+    <div class="wrap">
+      <h2 id="source-title">Build From Source</h2>
+      <p class="lede">Every public repo keeps its build steps in its README.  Clone one and follow along.</p>
+      <div class="code">
+        <button class="copy" type="button" hidden>Copy</button>
+        <pre><code>git clone https://github.com/jaywedgeworth22/HogHunter.git
+cd HogHunter
+open README.md</code></pre>
+      </div>
+      <p class="sr-only" aria-live="polite" id="copy-status"></p>
+    </div>
+  </section>
+</main>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4>About</h4>
-        <p style="max-width: 36ch; margin: 0;">A small studio building tools that work alongside you.  iOS, macOS, and the web -- one family, one inbox.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Apps</h4>
-        <ul>
-          <li><a href="/minimax-remote/">MiniMax Remote</a> <span class="pill-mini">iOS</span></li>
-          <li><a href="/botfleet/">BotFleet</a> <span class="pill-mini">iOS / Mac</span></li>
-          <li><a href="/socratic-trade/">Socratic.Trade</a> <span class="pill-mini">iOS</span></li>
-          <li><a href="/congress-trade/">Congress.Trade</a> <span class="pill-mini">iOS</span></li>
-          <li><a href="/autorotate/">Autorotate.Codes</a> <span class="pill-mini">iOS / Mac</span></li>
-          <li><a href="/contactlogo/">ContactLogo</a> <span class="pill-mini">iOS / Mac</span></li>
-          <li><a href="/codecaps/">CodeCaps Companion</a> <span class="pill-mini">iOS / Mac</span></li>
-          <li><a href="/dealdex/">DealDex</a> <span class="pill-mini">iOS / Android</span></li>
-          <li><a href="/usage-client/">Usage Client Monitor</a> <span class="pill-mini">iOS</span></li>
-          <li><a href="/usage-local/">Usage Local Monitor</a> <span class="pill-mini">iOS</span></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
-          <li><a href="/support.html">Support</a></li>
-          <li><a href="/privacy.html">Privacy</a></li>
-          <li><a href="mailto:feedback@simplewithus.com">feedback@simplewithus.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copy">
-      <span>&copy; 2026 Simple With Us. All rights reserved.</span>
-      <span>Apple, the Apple logo, App Store, TestFlight, iOS, iPadOS, and macOS are trademarks of Apple Inc., registered in the U.S. and other countries.</span>
-    </div>
+  <div class="wrap">
+    <span>Made by <a href="https://jays.services/" rel="noopener">Jay Wedgeworth</a> and a fleet of coding agents.</span>
+    <nav aria-label="Footer">
+      <a href="/support.html">Support</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="mailto:feedback@simplewithus.com">feedback@simplewithus.com</a>
+      <a href="https://github.com/jaywedgeworth22/Simple-With-Us" rel="noopener">Site Source</a>
+    </nav>
+    <p class="legal">© 2026 Simple With Us.  Site source under Apache-2.0.  Apple, App Store, TestFlight, iOS, and macOS are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
   </div>
 </footer>
 
+<script>
+(function () {
+  var status = document.getElementById("copy-status");
+  document.querySelectorAll(".code").forEach(function (block) {
+    var btn = block.querySelector(".copy");
+    var code = block.querySelector("code");
+    if (!btn || !code || !navigator.clipboard) return;
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        btn.textContent = "Copied";
+        if (status) status.textContent = "Copied to clipboard";
+        setTimeout(function () { btn.textContent = "Copy"; if (status) status.textContent = ""; }, 1500);
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
